@@ -8,7 +8,13 @@ class BibliotecaFacade:
         self.usuarios = []
 
     def cadastrar_livro(self, id, titulo):
+
+        if not titulo.strip():
+            print("Error: O título não pode estar vazio.")
+            return
+
         self.livros.append(Livro(id, titulo))
+        print("Livro cadastrado com sucesso.")
 
     def cadastrar_usuario(self, id, nome):
         self.usuarios.append(Usuario(id, nome))
